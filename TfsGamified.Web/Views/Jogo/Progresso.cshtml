@@ -1,0 +1,178 @@
+﻿@model TfsGamified.Web.Models.ProgressoModel
+
+@{
+    Layout = "~/Views/ViewMaster.cshtml";
+    ViewBag.Title = "Progresso";
+}
+
+
+<!-- Informações -->
+<div class="row">
+
+    <!-- Usuário -->
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title"><img src="~/Content/Imagens/usuario.png" class="custom-title-ico">&nbsp&nbspJogador</h4>
+            </div>
+            <hr />
+            <div class="content">
+                <div class="media mar-btm">
+                    <div class="media-left">
+                        @if (@Model.Imagem != null)
+                        {
+                            var caminho = @Model.Imagem;
+                            <img src="@caminho" class="custom-user-ico" />
+                        }
+                        else
+                        {
+                            <img src="~/Content/Imagens/perfil.png" class="custom-user-ico" />
+                        }
+                    </div>
+
+                    <div class="media-body">
+                        <h4 class="title">@Model.Nome</h4>
+                        <p> @Model.Login</p>
+                        <h4 class="title"><img src="~/Content/Imagens/podio.png" class="custom-title-ico">&nbsp&nbsp#@Model.Posicao&#186; lugar</h4>
+                        <p>com @Model.Pontuacao pontos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Atenção -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title"><img src="~/Content/Imagens/atencao.png" class="custom-title-ico">&nbsp&nbspAtenção</h4>
+            </div>
+            <hr />
+            <div class="content">
+
+                <div class="custom-alert">
+
+                    @if (@Model.Sugestoes.Any())
+                    {
+                        foreach (var item in @Model.Sugestoes)
+                        {
+                            <p style="padding: 5px;">
+                                <strong>@item</strong>
+                            </p>
+                        }
+                    }
+                    else
+                    {
+                        <p style="padding: 5px;">
+                            <strong>Nenhum alerta</strong>
+                        </p>                        
+                    }
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Emblemas -->
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title"><img src="~/Content/Imagens/emblema.png" class="custom-title-ico">&nbsp&nbspMeus emblemas </h4>
+            </div>
+            <hr />
+
+            <div class="content">
+                <div class="row">
+                    <div style="vertical-align: central; horiz-align: center; align-content: center; text-align: center">
+                        @if (@Model.EmblemaAjudante)
+                        {
+                            <div class="col-lg-1 col-md-2">
+                                <img src="~/Content/Imagens/ajudante.png" class="custom-emblema">
+                            </div>
+                        }
+                        @if (@Model.EmblemaCerteiro)
+                        {
+                            <div class="col-lg-1 col-md-2">
+                                <img src="~/Content/Imagens/certeiro.png" class="custom-emblema">
+                            </div>
+                        }
+                        @if (@Model.EmblemaResolvedor)
+                        {
+                            <div class="col-lg-1 col-md-2">
+                                <img src="~/Content/Imagens/resolvedor.png" class="custom-emblema">
+                            </div>
+                        }
+                        @if (@Model.EmblemaSuporte)
+                        {
+                            <div class="col-lg-1 col-md-2">
+                                <img src="~/Content/Imagens/suporte.png" class="custom-emblema">
+                            </div>
+                        }
+                        @if (@Model.EmblemaHalter)
+                        {
+                            <div class="col-lg-1 col-md-2">
+                                <img src="~/Content/Imagens/halterofilista.png" class="custom-emblema">
+                            </div>
+                        }
+                        @if (!@Model.EmblemaAjudante
+                 && !@Model.EmblemaCerteiro
+                 && !@Model.EmblemaResolvedor
+                 && !@Model.EmblemaSuporte
+                 && !@Model.EmblemaHalter)
+                        {
+                            <h4>Nenhum emblema</h4>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Prêmios -->
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title"><img src="~/Content/Imagens/premio.png" class="custom-title-ico">&nbsp&nbspMeus prêmios</h4>
+            </div>
+            <hr />
+
+            <div class="content">
+                <div class="row">
+                    <div style="vertical-align: central; horiz-align: center; align-content: center; text-align: center">
+                        @if (@Model.PremioTarefa)
+                        {
+                            <div class="col-lg-1 col-md-2">
+                                <img src="~/Content/Imagens/premioT.png" class="custom-premio">
+                            </div>
+                        }
+                        @if (@Model.PremioProblema)
+                        {
+                            <div class="col-lg-1 col-md-2">
+                                <img src="~/Content/Imagens/premioP.png" class="custom-premio">
+                            </div>
+                        }
+
+                        @if (!@Model.PremioProblema
+ && !@Model.PremioTarefa)
+                        {
+                            <h4>Nenhum prêmio</h4>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

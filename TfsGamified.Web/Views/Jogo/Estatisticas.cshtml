@@ -1,0 +1,194 @@
+﻿@model TfsGamified.Web.Models.EstatisticaModel
+
+@{
+    Layout = "~/Views/ViewMaster.cshtml";
+    ViewBag.Title = "Estatísticas";
+}
+
+@section HeadContent
+{
+    <link href="@Url.Content("~/Content/Styles/chart.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Content/Scripts/chart.js")" type="text/javascript"></script>
+}
+
+<!-- Informações -->
+<div class="row">
+
+    <!-- Usuário -->
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title"><img src="~/Content/Imagens/usuario.png" class="custom-title-ico">&nbsp&nbspJogador</h4>
+            </div>
+            <hr/>
+            <div class="content">
+                <div class="media mar-btm">
+                    <div class="media-left">
+                        @if (@Model.Imagem != null)
+                        {
+                            var caminho = @Model.Imagem;
+                            <img src="@caminho" class="custom-user-ico"/>
+                        }
+                        else
+                        {
+                            <img src="~/Content/Imagens/perfil.png" class="custom-user-ico"/>
+                        }
+                    </div>
+
+                    <div class="media-body">
+                        <h4 class="title">@Model.Nome</h4>
+                        <p> @Model.Login</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- total -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title"><img src="~/Content/Imagens/circuloMundo.png" class="custom-title-ico">&nbsp&nbspDas atividades do jogo</h4>
+            </div>
+            <hr/>
+
+            <div class="content">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-3">
+                        <div id="chartTotal" class="donut-size">
+                            <div class="pie-wrapper">
+                                <span class="label">
+                                    <span class="num">100</span><span class="smaller">%</span>
+                                </span>
+                                <div class="pie" style="clip: rect(auto auto auto auto);">
+                                    <div class="left-side half-circle" style="border-width: 0.1em; transform: rotate(360deg);"></div>
+                                    <div class="right-side half-circle" style="transform: rotate(180deg); border-width: 0.1em;"></div>
+                                </div>
+                                <div class="shadow" style="border-width: 0.1em;"></div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+
+                    <div class="col-lg-8 col-md-8">
+                        <div class="media-body">
+                            <h4 class="title"><img src="~/Content/Imagens/total.png" class="custom-title-ico" style="margin-top: -2px !important;">&nbsp&nbspTotal</h4>
+                            <br>
+                            Suas @Model.QuantidadeAtividadesJogador atividades representam @Model.PorcentagemAtividadesJogador&#37; das atividades do jogo
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: @Model.PorcentagemAtividadesJogador%">
+                                    @Model.PorcentagemAtividadesJogador&#37;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- jogador -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title"><img src="~/Content/Imagens/circuloJogador.png" class="custom-title-ico">&nbsp&nbspDas atividades do jogador</h4>
+            </div>
+            <hr />
+
+            <!-- reabertas -->
+            <div class="content">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-3">
+                        <div id="chartReaberta" class="donut-size">
+                            <div class="pie-wrapper">
+                                <span class="label">
+                                    <span class="num">100</span><span class="smaller">%</span>
+                                </span>
+                                <div class="pie" style="clip: rect(auto auto auto auto);">
+                                    <div class="left-side half-circle" style="border-width: 0.1em; transform: rotate(360deg);"></div>
+                                    <div class="right-side half-circle" style="transform: rotate(180deg); border-width: 0.1em;"></div>
+                                </div>
+                                <div class="shadow" style="border-width: 0.1em;"></div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+
+                    <div class="col-lg-8 col-md-8">
+                        <div class="media-body">
+                            <h4 class="title"><img src="~/Content/Imagens/reaberta.png" class="custom-title-ico">&nbsp&nbspReabertas</h4>
+                            <br>
+                            Suas @Model.QuantidadeAtividadesReabertas atividades reabertas representam @Model.PorcentagemAtividadesReabertas&#37; das suas atividades concluídas
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: @Model.PorcentagemAtividadesReabertas%">
+                                    @Model.PorcentagemAtividadesReabertas&#37;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- perdidas -->
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-3">
+                        <div id="chartPerdida" class="donut-size">
+                            <div class="pie-wrapper">
+                                <span class="label">
+                                    <span class="num">100</span><span class="smaller">%</span>
+                                </span>
+                                <div class="pie" style="clip: rect(auto auto auto auto);">
+                                    <div class="left-side half-circle" style="border-width: 0.1em; transform: rotate(360deg);"></div>
+                                    <div class="right-side half-circle" style="transform: rotate(180deg); border-width: 0.1em;"></div>
+                                </div>
+                                <div class="shadow" style="border-width: 0.1em;"></div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+
+                    <div class="col-lg-8 col-md-8">
+                        <div class="media-body">
+                            <h4 class="title"><img src="~/Content/Imagens/perdida.png" class="custom-title-ico">&nbsp&nbspPerdidas</h4>
+                            <br>
+                            Suas @Model.QuantidadeAtividadesPerdidas atividades perdidas representam @Model.PorcentagemAtividadesPerdidas&#37; das suas atividades concluídas
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: @Model.PorcentagemAtividadesPerdidas%">
+                                    @Model.PorcentagemAtividadesPerdidas&#37;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+        updateDonutChart('#chartTotal', @Model.PorcentagemAtividadesJogador, true);
+
+        updateDonutChart('#chartReaberta', @Model.PorcentagemAtividadesReabertas, true);
+
+        updateDonutChart('#chartPerdida', @Model.PorcentagemAtividadesPerdidas, true);
+
+</script>

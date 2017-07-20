@@ -1,0 +1,52 @@
+﻿
+
+.custom-nav-ico {
+    max-width: 22px;
+    max-height: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.custom-title-ico {
+    max-width: 28px;
+    max-height: 28px;
+    margin-top: -5px;
+    padding: 0;
+}
+
+.custom-alert {
+    background-color: #FFE391;
+    padding: 7px;
+}
+
+.custom-emblema {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.custom-premio {
+    max-width: 76px;
+    max-height: 80px;
+}
+
+.custom-logo {
+
+    max-width: 70px;
+    max-height: 65px;
+}
+
+.custom-logo-ico {
+
+    max-width: 40px;
+    max-height: 35px;
+
+    margin-bottom: -5px;
+    margin-left: -10px; 
+}
+
+.custom-user-ico {
+    max-width: 110px;
+    max-height: 110px;
+    margin-right: 20px;
+}

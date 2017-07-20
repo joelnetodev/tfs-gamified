@@ -1,0 +1,29 @@
+<xml>
+  
+  <projeto>
+    <loginsDesenvolvedores>login1,login2,login3</loginsDesenvolvedores>
+    <loginsAtivos>login1,login2</loginsAtivos>
+  </projeto>
+  
+  
+  <campoEstimadoTarefa>Estimated Work</campoEstimadoTarefa>
+  <campoRealizadoTarefa>Realized Work</campoRealizadoTarefa>
+  <campoEstimadoProblema>Effort</campoEstimadoProblema>
+  <campoRealizadoProblema>Realized Work</campoRealizadoProblema>
+
+  <pontuacaoAtividade>10</pontuacaoAtividade>
+  <pontuacaoAtividadeReaberta>5</pontuacaoAtividadeReaberta>
+  <pontuacaoAtividadePerdida>1</pontuacaoAtividadePerdida>
+  
+  <pontuacaoSuporte>100</pontuacaoSuporte>
+  <pontuacaoHalter>100</pontuacaoHalter>
+  <pontuacaoCerteiro>100</pontuacaoCerteiro>
+  <pontuacaoAjudante>100</pontuacaoAjudante>
+  <pontuacaoSabio>100</pontuacaoSabio>
+  
+  <quantidadePremioTarefa>100</quantidadePremioTarefa>
+  <quantidadePremioProblema>100</quantidadePremioProblema>
+  <pontuacaoPremioTarefa>100</pontuacaoPremioTarefa>
+  <pontuacaoPremioProblema>100</pontuacaoPremioProblema>
+  
+</xml>
