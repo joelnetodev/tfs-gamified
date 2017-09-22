@@ -1,17 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AEC6E9AF-16D4-4EA1-9B96-498A91F810C9}</ProjectGuid>
+    <ProjectGuid>{71A5C7BF-B0EF-4059-9297-40AD53C2317C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TfsGamified.Repositories</RootNamespace>
-    <AssemblyName>TfsGamified.Repositories</AssemblyName>
+    <RootNamespace>TfsGamified.DataBase</RootNamespace>
+    <AssemblyName>TfsGamified.DataBase</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,8 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>
-    </CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,8 +28,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>
-    </CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CustomInfra.DataBase.Simple">
@@ -43,41 +38,32 @@
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SimpleInjector, Version=4.0.6.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInjector.4.0.6\lib\net45\SimpleInjector.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\ClassNodePathRepository.cs" />
-    <Compile Include="Classes\ProjectRepository.cs" />
-    <Compile Include="Classes\FieldRepository.cs" />
-    <Compile Include="Classes\ConstantRepository.cs" />
-    <Compile Include="Classes\WorkItemCustomLatestRepository.cs" />
-    <Compile Include="Classes\WorkItemCustomWereRepository.cs" />
-    <Compile Include="Classes\WorkItemCoreWereRepository.cs" />
-    <Compile Include="Classes\WorkItemCoreLatestRepository.cs" />
-    <Compile Include="Interfaces\IClassNodePathRepository.cs" />
-    <Compile Include="Interfaces\IProjectRepository.cs" />
-    <Compile Include="Interfaces\IFieldRepository.cs" />
-    <Compile Include="Interfaces\IConstantRepository.cs" />
-    <Compile Include="Interfaces\IWorkItemCustomLatestRepository.cs" />
-    <Compile Include="Interfaces\IWorkItemCustomWereRepository.cs" />
-    <Compile Include="Interfaces\IWorkItemCoreWereRepository.cs" />
-    <Compile Include="Interfaces\IWorkItemCoreLatestRepository.cs" />
+    <Compile Include="Maps\ClassificationNodePathMap.cs" />
+    <Compile Include="Maps\ConstantMap.cs" />
+    <Compile Include="Maps\FieldMap.cs" />
+    <Compile Include="Maps\ProjectMap.cs" />
+    <Compile Include="Maps\ProjectsMap.cs" />
+    <Compile Include="Maps\WorkItemCoreLatestMap.cs" />
+    <Compile Include="Maps\WorkItemCoreWereMap.cs" />
+    <Compile Include="Maps\WorkItemCustomLatestMap.cs" />
+    <Compile Include="Maps\WorkItemCustomWereMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\TfsGamified.Entities\TfsGamified.Entities.csproj">
       <Project>{3c465e10-526a-4049-bd1c-5b42eb596b3b}</Project>
@@ -89,11 +75,4 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

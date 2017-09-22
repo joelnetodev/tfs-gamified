@@ -2,7 +2,6 @@
 using CustomInfra.DataBase.Simple.Repository;
 using CustomInfra.Injector.Simple.Attribute;
 using TfsGamified.Entities;
-using TfsGamified.Entities.Dto;
 
 namespace TfsGamified.Repositories.Interfaces
 {

@@ -5,7 +5,6 @@ using System.Text;
 using CustomInfra.DataBase.Simple.Repository;
 using TfsGamified.Entities;
 using TfsGamified.Entities.Constants;
-using TfsGamified.Entities.Dto;
 using TfsGamified.Repositories.Interfaces;
 
 namespace TfsGamified.Repositories.Classes

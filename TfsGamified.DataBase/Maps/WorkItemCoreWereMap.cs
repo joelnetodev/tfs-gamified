@@ -3,30 +3,30 @@ using System.Data.Entity.ModelConfiguration;
 using CustomInfra.DataBase.Simple.Attribute;
 using TfsGamified.Entities;
 
-namespace TfsGamified.Repositories.Maps
+namespace TfsGamified.DataBase.Maps
 {
-    // tbl_WorkItemCoreLatest
+    // tbl_WorkItemCoreWere
 
 
     [DbInfraMap]
-    public class WorkItemCoreLatestMap : EntityTypeConfiguration<WorkItemCoreLatest>
+    public class WorkItemCoreWereMap : EntityTypeConfiguration<WorkItemCoreWere>
     {
-        public WorkItemCoreLatestMap()
+        public WorkItemCoreWereMap()
             : this("dbo")
         {
         }
 
-        public WorkItemCoreLatestMap(string schema)
+        public WorkItemCoreWereMap(string schema)
         {
-            ToTable("tbl_WorkItemCoreLatest", schema);
-            HasKey(x => new { x.PartitionId, x.DataspaceId, x.Id });
+            ToTable("tbl_WorkItemCoreWere", schema);
+            HasKey(x => new { x.PartitionId, x.DataspaceId, x.Id, x.RevisedDate });
 
             Property(x => x.PartitionId).HasColumnName(@"PartitionId").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
             Property(x => x.DataspaceId).HasColumnName(@"DataspaceId").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
             Property(x => x.Id).HasColumnName(@"Id").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
             Property(x => x.Rev).HasColumnName(@"Rev").HasColumnType("int").IsRequired();
             Property(x => x.AuthorizedDate).HasColumnName(@"AuthorizedDate").HasColumnType("datetime").IsRequired();
-            Property(x => x.RevisedDate).HasColumnName(@"RevisedDate").HasColumnType("datetime").IsRequired();
+            Property(x => x.RevisedDate).HasColumnName(@"RevisedDate").HasColumnType("datetime").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
             Property(x => x.AuthorizedAs).HasColumnName(@"AuthorizedAs").HasColumnType("int").IsRequired();
             Property(x => x.WorkItemType).HasColumnName(@"WorkItemType").HasColumnType("nvarchar").IsRequired().HasMaxLength(256);
             Property(x => x.AreaPath).HasColumnName(@"AreaPath").HasColumnType("varbinary").IsRequired().HasMaxLength(60);
@@ -43,5 +43,6 @@ namespace TfsGamified.Repositories.Maps
             Property(x => x.Watermark).HasColumnName(@"Watermark").HasColumnType("int").IsRequired();
         }
     }
+
 }
 // </auto-generated>

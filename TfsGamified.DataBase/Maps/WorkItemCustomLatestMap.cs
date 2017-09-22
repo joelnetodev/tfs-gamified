@@ -3,7 +3,7 @@ using System.Data.Entity.ModelConfiguration;
 using CustomInfra.DataBase.Simple.Attribute;
 using TfsGamified.Entities;
 
-namespace TfsGamified.Repositories.Maps
+namespace TfsGamified.DataBase.Maps
 {
     // tbl_WorkItemCustomLatest
 

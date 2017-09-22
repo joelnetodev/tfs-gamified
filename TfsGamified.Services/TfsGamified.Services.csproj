@@ -36,10 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CustomInfra.DataBase.Simple">
-      <HintPath>C:\Users\Joel Neto\Documents\Visual Studio 2015\Projects\CustomInfra\DataBaseInfra\bin\Debug\CustomInfra.DataBase.Simple.dll</HintPath>
+      <HintPath>C:\Users\jcsn\Documents\CustomInfraTutorial\CustomInfraTutorial\Dlls\CustomInfra.DataBase.Simple.dll</HintPath>
     </Reference>
     <Reference Include="CustomInfra.Injector.Simple">
-      <HintPath>C:\Users\Joel Neto\Documents\Visual Studio 2015\Projects\CustomInfra\DataBaseInfra\bin\Debug\CustomInfra.Injector.Simple.dll</HintPath>
+      <HintPath>C:\Users\jcsn\Documents\CustomInfraTutorial\CustomInfraTutorial\Dlls\CustomInfra.Injector.Simple.dll</HintPath>
     </Reference>
     <Reference Include="SimpleInjector, Version=4.0.6.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.4.0.6\lib\net45\SimpleInjector.dll</HintPath>
@@ -68,6 +68,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TfsGamified.Common\TfsGamified.Common.csproj">
+      <Project>{b2d29678-3c51-466a-a365-d9cb2c6a2e44}</Project>
+      <Name>TfsGamified.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TfsGamified.Configuration\TfsGamified.Configuration.csproj">
       <Project>{d7448716-4679-4c2b-b562-9344b7b3c96c}</Project>
       <Name>TfsGamified.Configuration</Name>
