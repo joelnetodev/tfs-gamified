@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CustomInfra.DataBase.Simple">
-      <HintPath>C:\Users\jcsn\Documents\CustomInfraTutorial\CustomInfraTutorial\Dlls\CustomInfra.DataBase.Simple.dll</HintPath>
+      <HintPath>..\..\..\..\temp\CustomInfraTutorial\Dlls\CustomInfra.DataBase.Simple.dll</HintPath>
     </Reference>
     <Reference Include="CustomInfra.Injector.Simple">
-      <HintPath>C:\Users\jcsn\Documents\CustomInfraTutorial\CustomInfraTutorial\Dlls\CustomInfra.Injector.Simple.dll</HintPath>
+      <HintPath>..\..\..\..\temp\CustomInfraTutorial\Dlls\CustomInfra.Injector.Simple.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>

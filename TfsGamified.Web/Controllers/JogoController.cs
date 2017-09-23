@@ -3,8 +3,6 @@ using System.Linq;
 using System.Web.Mvc;
 using CustomInfra.Injector.Simple.IoC;
 using TfsGamified.Entities.Dto;
-using TfsGamified.Repositories.Interfaces;
-using TfsGamified.Repositories.Maps;
 using TfsGamified.Services.Interfaces;
 using TfsGamified.Web.Models;
 
