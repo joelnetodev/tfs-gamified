@@ -15,7 +15,7 @@
     <AssemblyName>TfsGamified.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -47,11 +47,11 @@
     </CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CustomInfra.DataBase.Simple, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DbInfraSimpleJ.3.0.0\lib\dotnet\CustomInfra.DataBase.Simple.dll</HintPath>
+    <Reference Include="CustomInfra.DataBase.Simple, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DbInfraSimpleJ.5.0.0\lib\dotnet\CustomInfra.DataBase.Simple.dll</HintPath>
     </Reference>
-    <Reference Include="CustomInfra.Injector.Simple, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\IoCInfraSimpleJ.3.0.0\lib\dotnet\CustomInfra.Injector.Simple.dll</HintPath>
+    <Reference Include="CustomInfra.Injector.Simple, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IoCInfraSimpleJ.5.0.0\lib\dotnet\CustomInfra.Injector.Simple.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
@@ -236,7 +236,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56567</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56567/</IISUrl>
+          <IISUrl>http://localhost/TfsGamified.Web</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>http://localhost:8080/TfsGamified</CustomServerUrl>

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using CustomInfra.DataBase.Simple.DbContext;
+using CustomInfra.DataBase.Simple.Configuration;
 using CustomInfra.Injector.Simple.IoC;
 
 namespace TfsGamified.Web
@@ -14,9 +14,8 @@ namespace TfsGamified.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            IoCInfra.Container.Register<IDbInfraContext, DbContextInfra>(IoCInfraLifeCycle.Scoped, ConnectionString.TfsConnection);
-            
             IoCInfra.StartAttributeRegistration();
+            DbInfra.StartDbContextConfiguration(ConnectionString.TfsConnection);
         }
     }
 }
