@@ -12,7 +12,6 @@ namespace TfsGamified.Repositories.Classes
         public List<WorkItemCoreLatest> ConsultarTasksBugsComSituacaoDonePorArea(List<int> idsAreaNodePath)
         {
             return (from obj in DbEntity
-
                     where obj.State == WorkItemState.Done
                     && (obj.WorkItemType == WorkItemType.Task || obj.WorkItemType == WorkItemType.Bug)
                     && (obj.AreaId.HasValue && idsAreaNodePath.Contains(obj.AreaId.Value))

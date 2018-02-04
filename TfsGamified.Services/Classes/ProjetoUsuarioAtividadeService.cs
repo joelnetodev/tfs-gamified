@@ -42,15 +42,12 @@ namespace TfsGamified.Services.Classes
             List<Constant> constants;
             List<Field> fields;
 
-            using (IoCInfra.BeginScope())
-            {
-                workItemsCoreLatest = _workItemService.ConsultarTasksBugsComSituacaoDonePorProjetoPorCiclo(nomeProjeto, nomeCiclo);
-                workItemsCoreWere = _coreWereRepository.ConsultarPorItemsCoreLatest(workItemsCoreLatest);
-                workItemsCustomLatest = _customLatestRepository.ConsultarPorItemsCoreLatest(workItemsCoreLatest);
+            workItemsCoreLatest = _workItemService.ConsultarTasksBugsComSituacaoDonePorProjetoPorCiclo(nomeProjeto, nomeCiclo);
+            workItemsCoreWere = _coreWereRepository.ConsultarPorItemsCoreLatest(workItemsCoreLatest);
+            workItemsCustomLatest = _customLatestRepository.ConsultarPorItemsCoreLatest(workItemsCoreLatest);
 
-                constants = _constantService.ConsultarPorConfiguracaoComImagem(nomeProjeto);
-                fields = _fieldService.ConsultarFieldPorConfiguracaoComTitulo();
-            }
+            constants = _constantService.ConsultarPorConfiguracaoComImagem(nomeProjeto);
+            fields = _fieldService.ConsultarFieldPorConfiguracaoComTitulo();
 
             return ConverterEntidadesEmAtividadesUsuarioDto(nomeProjeto, workItemsCoreLatest, workItemsCoreWere, workItemsCustomLatest, constants, fields);
         }

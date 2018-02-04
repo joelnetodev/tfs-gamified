@@ -45,7 +45,7 @@ namespace TfsGamified.Repositories.Classes
 
             var query = string.Format(bQuery.ToString(), PropertyNames.IdentityImageData, string.Join(",", nomesQuery));
 
-            return base.SqlQuery<Constant>(query).ToList();
+            return base.ExecuteSqlQuery<Constant>(query).ToList();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using CustomInfra.DataBase.Simple.DbConfig;
 using CustomInfra.Injector.Simple.IoC;
 using TfsGamified.Entities.Dto;
 using TfsGamified.Services.Interfaces;
@@ -30,7 +31,14 @@ namespace TfsGamified.Web.Controllers
 
             PreencherTempData(nomeProjeto);
 
-            var listaAtividadesUsuario = _atividadeService.ConsultarAtividadesConcluidasProProjeto(nomeProjeto);
+
+            ProjetoUsuariosAtividadesDTO listaAtividadesUsuario = null;
+
+            using (DbInfra.BeginDbContextScope())
+            {
+                listaAtividadesUsuario = _atividadeService.ConsultarAtividadesConcluidasProProjeto(nomeProjeto);
+            }
+
 
             string usuarioLogado = System.Web.HttpContext.Current.User.Identity.Name;
 
@@ -47,7 +55,12 @@ namespace TfsGamified.Web.Controllers
 
             PreencherTempData(nomeProjeto);
 
-            var listaAtividadesUsuario = _atividadeService.ConsultarAtividadesConcluidasProProjeto(nomeProjeto);
+            ProjetoUsuariosAtividadesDTO listaAtividadesUsuario = null;
+
+            using (DbInfra.BeginDbContextScope())
+            {
+                listaAtividadesUsuario = _atividadeService.ConsultarAtividadesConcluidasProProjeto(nomeProjeto);
+            }
 
             string usuarioLogado = System.Web.HttpContext.Current.User.Identity.Name;
             var perfilDto = _estatisticaService.ConsultarEstatisticasJogador(listaAtividadesUsuario, usuarioLogado);

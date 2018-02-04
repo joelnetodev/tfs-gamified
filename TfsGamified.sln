@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsGamified.Entities", "TfsGamified.Entities\TfsGamified.Entities.csproj", "{3C465E10-526A-4049-BD1C-5B42EB596B3B}"
 EndProject
@@ -71,5 +71,8 @@ Global
 		{D7448716-4679-4C2B-B562-9344B7B3C96C} = {A51C77D8-77B8-4464-8310-17CC46309493}
 		{71A5C7BF-B0EF-4059-9297-40AD53C2317C} = {AEBE9741-A01A-44DF-8BC5-ADA7656FD532}
 		{B2D29678-3C51-466A-A365-D9CB2C6A2E44} = {FB5D0343-351C-4B4C-BC18-07B1B9BE3269}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0D085B8-3494-4F9A-959D-B509847FEDF9}
 	EndGlobalSection
 EndGlobal
