@@ -1,10 +1,8 @@
-using System;
-
 namespace TfsGamified.Entities
 {
 
     // tbl_projects
-    
+
     public class Projects
     {
         public int PartitionId { get; set; } // PartitionId (Primary key via unique index ixc_Project)

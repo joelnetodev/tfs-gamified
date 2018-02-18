@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using CustomInfra.DataBase.Simple.DbConfig;
+using CustomInfra.DataBase.Simple.Db;
 using CustomInfra.Injector.Simple.IoC;
 
 namespace TfsGamified.Web

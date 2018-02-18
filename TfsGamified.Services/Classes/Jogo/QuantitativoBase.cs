@@ -1,9 +1,8 @@
-﻿ using System;
- using System.Collections.Generic;
- using System.Linq;
- using TfsGamified.Configuration;
- using TfsGamified.Entities.Dto;
- using TfsGamified.Services.Interfaces;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using TfsGamified.Configuration;
+using TfsGamified.Entities.Dto;
 
 namespace TfsGamified.Services.Classes.Jogo
 {

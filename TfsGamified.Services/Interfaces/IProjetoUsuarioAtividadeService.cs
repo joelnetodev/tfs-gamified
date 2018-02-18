@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using CustomInfra.Injector.Simple.Attribute;
+﻿using CustomInfra.Injector.Simple.Attribute;
 using TfsGamified.Entities.Dto;
 
 namespace TfsGamified.Services.Interfaces

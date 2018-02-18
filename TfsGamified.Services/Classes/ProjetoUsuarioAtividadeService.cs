@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CustomInfra.Injector.Simple.IoC;
-using TfsGamified.Configuration;
 using TfsGamified.Entities;
 using TfsGamified.Entities.Dto;
 using TfsGamified.Repositories.Interfaces;

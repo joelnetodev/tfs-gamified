@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace TfsGamified.Entities.Dto
+﻿namespace TfsGamified.Entities.Dto
 {
     public class EstatisticaDto
     {

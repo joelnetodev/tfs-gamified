@@ -48,11 +48,11 @@
     </CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CustomInfra.DataBase.Simple, Version=6.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DbInfraSimpleJ.6.5.0\lib\dotnet\CustomInfra.DataBase.Simple.dll</HintPath>
+    <Reference Include="CustomInfra.DataBase.Simple, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DbInfraSimpleJ.7.0.0\lib\dotnet\CustomInfra.DataBase.Simple.dll</HintPath>
     </Reference>
-    <Reference Include="CustomInfra.Injector.Simple, Version=6.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\IoCInfraSimpleJ.6.5.0\lib\dotnet\CustomInfra.Injector.Simple.dll</HintPath>
+    <Reference Include="CustomInfra.Injector.Simple, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IoCInfraSimpleJ.7.0.0\lib\dotnet\CustomInfra.Injector.Simple.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
